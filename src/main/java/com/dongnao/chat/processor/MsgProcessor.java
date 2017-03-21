@@ -41,8 +41,9 @@ public class MsgProcessor {
 	public void logout(Channel client){
 		if(getNickName(client) == null){ return; }
 		System.out.println("current people count:"+onlineUsers.size());
+		System.out.println("current people count:"+onlineUsers.size());
 		onlineUsers.remove(client);
-		System.out.println("after remove current people count:"+onlineUsers.size());
+		System.out.println("after remove current people count:  the same "+onlineUsers.size());
 		for (Channel channel : onlineUsers) {
 			IMMessage msg = new IMMessage(IMP.SYSTEM.getName(),sysTime(),onlineUsers.size(),getNickName(client) + "退出");
 			String content = encoder.encode(msg);
